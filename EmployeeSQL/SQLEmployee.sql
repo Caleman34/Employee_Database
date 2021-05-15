@@ -76,22 +76,22 @@ From salaries;
 
 -- -------Import csv files in same order as tables created then view------
 
-Select *
-FROM departments;
+Select * FROM departments;
 
-Select *
-FROM titles;
+Select * FROM titles;
 
-Select *
-FROM employees;
+Select * FROM employees;
 
-Select *
-FROM dept_emp;
+Select * FROM dept_emp;
 
-Select *
-FROM dept_manager;
+Select * FROM dept_manager;
 
-Select *
-FROM salaries;
+Select * FROM salaries;
 
 -- --------------------------------------
+-- ----------query searches--------------
+
+
+
+
+
