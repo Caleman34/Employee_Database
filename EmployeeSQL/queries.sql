@@ -35,3 +35,17 @@ INNER JOIN employees AS e on
 	
 -- view first 500 and save output into seperate file
 LIMIT 500;
+
+-- Question 5: list first_name, last_name, sex of employees
+-- whose first name is "Hercules" and last_name begins with "B"
+SELECT e.first_name, e.last_name, e.sex
+FROM employees AS e
+WHERE first_name = 'Hercules'
+AND last_name LIKE 'B%'
+
+
+
+
+
+
+
