@@ -6,7 +6,7 @@ DROP TABLE salaries
 DROP TABLE titles
 
 CREATE TABLE departments (
-	dept_no VARCHAR(30),
+	dept_no VARCHAR(30) PRIMARY KEY,
 	dept_name VARCHAR(30)
 );
 
@@ -30,7 +30,7 @@ select *
 From dept_manager;
 
 CREATE TABLE employees (
-	emp_no INT NOT NULL,
+	emp_no INT NOT NULL PRIMARY KEY,
 	emp_title VARCHAR(30),
 	birth_date DATE,
 	first_name VARCHAR(30),
@@ -51,7 +51,7 @@ select *
 From salaries;
 
 CREATE TABLE titles (
-	title_id VARCHAR(30),
+	title_id VARCHAR(30) PRIMARY KEY,
 	title VARCHAR(30)
 );
 
