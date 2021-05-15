@@ -25,6 +25,13 @@ INNER JOIN dept_manager AS dm on
 INNER JOIN employees AS e on
 	e.emp_no = dm.emp_no;
 
--- Question 4: list
+-- Question 4: list employees with emp_no, last_name, first_name, and dept_name
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+FROM dept_emp AS de
+INNER JOIN departments AS d on
+	de.dept_no = d.dept_no
+INNER JOIN employees AS e on
+	e.emp_no = de.emp_no
 	
-
+-- view first 500 and save output into seperate file
+LIMIT 500;
