@@ -32,11 +32,11 @@ From dept_manager;
 CREATE TABLE employees (
 	emp_no INT NOT NULL,
 	emp_title VARCHAR(30),
-	birth_date VARCHAR(30),
+	birth_date DATE,
 	first_name VARCHAR(30),
 	last_name VARCHAR(30),
 	sex VARCHAR(30),
-	hire_date VARCHAR(30)
+	hire_date DATE
 );
 
 select *
@@ -52,7 +52,7 @@ From salaries;
 
 CREATE TABLE titles (
 	title_id VARCHAR(30),
-	tile VARCHAR(30)
+	title VARCHAR(30)
 );
 
 select *
