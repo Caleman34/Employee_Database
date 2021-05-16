@@ -72,3 +72,13 @@ WHERE dept_name = 'Sales' OR dept_name = 'Development'
 	
 -- view first 500 and save output into seperate file
 LIMIT 500;
+
+
+-- Question 8: List frequency count of employee last_names in descending order
+SELECT last_name, COUNT(last_name) AS "Name_Count"
+FROM employees
+GROUP BY last_name
+ORDER BY "Name_Count" DESC;
+	
+-- view first 500 and save output into seperate file
+LIMIT 500;
