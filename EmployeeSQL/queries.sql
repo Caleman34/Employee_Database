@@ -25,6 +25,7 @@ INNER JOIN dept_manager AS dm on
 INNER JOIN employees AS e on
 	e.emp_no = dm.emp_no;
 
+
 -- Question 4: list employees with emp_no, last_name, first_name, and dept_name
 SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
 FROM dept_emp AS de
@@ -36,16 +37,23 @@ INNER JOIN employees AS e on
 -- view first 500 and save output into seperate file
 LIMIT 500;
 
+
 -- Question 5: list first_name, last_name, sex of employees
 -- whose first name is "Hercules" and last_name begins with "B"
 SELECT e.first_name, e.last_name, e.sex
 FROM employees AS e
 WHERE first_name = 'Hercules'
-AND last_name LIKE 'B%'
+AND last_name LIKE 'B%';
 
 
-
-
-
-
-
+-- Question 6: list all employees in sales department with emp_no, last_name, first_name, and dept_name
+SELECT e.emp_no, e.first_name, e.last_name, d.dept_name
+FROM dept_emp AS de
+INNER JOIN employees AS e on
+	e.emp_no = de.emp_no
+INNER JOIN departments AS d on
+	de.dept_no = d.dept_no
+WHERE dept_name = 'Sales'
+	
+-- view first 500 and save output into seperate file
+LIMIT 500;
