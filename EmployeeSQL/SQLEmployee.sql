@@ -73,7 +73,6 @@ CREATE TABLE salaries (
 select *
 From salaries;
 
-
 -- -------Import csv files in same order as tables created then view------
 
 Select * FROM departments;
@@ -87,11 +86,3 @@ Select * FROM dept_emp;
 Select * FROM dept_manager;
 
 Select * FROM salaries;
-
--- --------------------------------------
--- ----------query searches--------------
-
-
-
-
-
