@@ -46,7 +46,8 @@ WHERE first_name = 'Hercules'
 AND last_name LIKE 'B%';
 
 
--- Question 6: list all employees in sales department with emp_no, last_name, first_name, and dept_name
+-- Question 6: list all employees in sales department with:
+-- emp_no, last_name, first_name, and dept_name
 SELECT e.emp_no, e.first_name, e.last_name, d.dept_name
 FROM dept_emp AS de
 INNER JOIN employees AS e on
@@ -54,6 +55,20 @@ INNER JOIN employees AS e on
 INNER JOIN departments AS d on
 	de.dept_no = d.dept_no
 WHERE dept_name = 'Sales'
+	
+-- view first 500 and save output into seperate file
+LIMIT 500;
+
+
+-- Question 7: List all employees in Sales and Development with:
+-- emp_no, last_name, first_name, and dept_name
+SELECT e.emp_no, e.first_name, e.last_name, d.dept_name
+FROM dept_emp AS de
+INNER JOIN employees AS e on
+	e.emp_no = de.emp_no
+INNER JOIN departments AS d on
+	de.dept_no = d.dept_no
+WHERE dept_name = 'Sales' OR dept_name = 'Development'
 	
 -- view first 500 and save output into seperate file
 LIMIT 500;
