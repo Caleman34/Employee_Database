@@ -1,6 +1,6 @@
 # SQL Homework - Employee Database: A Mystery in Two Parts
 
-![sql.png](images/sql.png)
+![sql.png](Images/sql.png)
 
 ## Background
 
@@ -16,7 +16,7 @@ In this assignment, you will design the tables to hold data in the CSVs, import 
 
 Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool like [http://www.quickdatabasediagrams.com](http://www.quickdatabasediagrams.com).
 
-![Database Diagram](images/SQL_ERD.png)
+![Database Diagram](Images/SQL_ERD.png)
 
 #### Data Engineering
 
@@ -32,31 +32,82 @@ Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool li
 Once you have a complete database, do the following:
 
 1. List the following details of each employee: employee number, last name, first name, sex, and salary.
-
+```sql
+SELECT e.emp_no, e.last_name, e.first_name, e.sex, s.salary
+FROM employees AS e
+INNER JOIN salaries AS s on
+	e.emp_no = s.emp_no
+```
 2. List first name, last name, and hire date for employees who were hired in 1986.
-
+```sql
+SELECT first_name, last_name, hire_date
+FROM employees
+WHERE hire_date >= '01/01/1986' AND hire_date <= '12/31/1986'
+```
 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
-
+```sql
+SELECT d.dept_no, d.dept_name, e.emp_no, e.last_name, e.first_name
+FROM departments AS d
+INNER JOIN dept_manager AS dm on
+	d.dept_no = dm.dept_no
+INNER JOIN employees AS e on
+	e.emp_no = dm.emp_no;
+```
 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
-
+```sql
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+FROM dept_emp AS de
+INNER JOIN departments AS d on
+	de.dept_no = d.dept_no
+INNER JOIN employees AS e on
+	e.emp_no = de.emp_no
+```
 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
-
+```sql
+SELECT e.first_name, e.last_name, e.sex
+FROM employees AS e
+WHERE first_name = 'Hercules'
+AND last_name LIKE 'B%';
+```
 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
-
+```sql
+SELECT e.emp_no, e.first_name, e.last_name, d.dept_name
+FROM dept_emp AS de
+INNER JOIN employees AS e on
+	e.emp_no = de.emp_no
+INNER JOIN departments AS d on
+	de.dept_no = d.dept_no
+WHERE dept_name = 'Sales'
+```
 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
-
+```sql
+SELECT e.emp_no, e.first_name, e.last_name, d.dept_name
+FROM dept_emp AS de
+INNER JOIN employees AS e on
+	e.emp_no = de.emp_no
+INNER JOIN departments AS d on
+	de.dept_no = d.dept_no
+WHERE dept_name = 'Sales' OR dept_name = 'Development'
+```
 8. In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
-
+```sql
+SELECT last_name, COUNT(last_name) AS "Name_Count"
+FROM employees
+GROUP BY last_name
+ORDER BY "Name_Count" DESC;
+```
 ## Bonus (Optional)
 
 As you examine the data, you are overcome with a creeping suspicion that the dataset is fake. You surmise that your boss handed you spurious data in order to test the data engineering skills of a new employee. To confirm your hunch, you decide to take the following steps to generate a visualization of the data, with which you will confront your boss:
 
 1. Import the SQL database into Pandas. (Yes, you could read the CSVs directly in Pandas, but you are, after all, trying to prove your technical mettle.) This step may require some research. Feel free to use the code below to get started. Be sure to make any necessary modifications for your username, password, host, port, and database name:
 
-   ```sql
-   from sqlalchemy import create_engine
-   engine = create_engine('postgresql://localhost:5432/<your_db_name>')
-   connection = engine.connect()
+   ```python
+   from config import username
+   from config import password
+
+   engine = create_engine(f"postgresql://{username}:{password}@localhost:5432/EmployeeSQL")
+   conn = engine.connect()
    ```
 
 * Consult [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/latest/core/engines.html#postgresql) for more information.
