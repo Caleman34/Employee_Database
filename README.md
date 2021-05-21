@@ -1,6 +1,6 @@
 # SQL Homework - Employee Database: A Mystery in Two Parts
 
-![sql.png](Images/sql.png)
+![sql.png](images/sql.png)
 
 ## Background
 
@@ -16,7 +16,7 @@ In this assignment, you will design the tables to hold data in the CSVs, import 
 
 Inspect the CSVs and sketch out an ERD of the tables. Feel free to use a tool like [http://www.quickdatabasediagrams.com](http://www.quickdatabasediagrams.com).
 
-![Database Diagram](Images/SQL_ERD.png)
+![Database Diagram](images/SQL_ERD.png)
 
 #### Data Engineering
 
@@ -116,11 +116,11 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 
 2. Create a histogram to visualize the most common salary ranges for employees.
 
-![SalaryPerEmployee.png](Images/SalaryPerEmployee.png)
+![SalaryPerEmployee.png](images/SalaryPerEmployee.png)
 
 3. Create a bar chart of average salary by title.
 
-![AverageSalaryByJobTitle.png](Images/AverageSalaryByJobTitle.png)
+![AverageSalaryByJobTitle.png](images/AverageSalaryByJobTitle.png)
 
 ## Epilogue
 
