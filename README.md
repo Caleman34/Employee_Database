@@ -1,4 +1,4 @@
-# SQL Homework - Employee Database: A Mystery in Two Parts
+# SQL challenge - Employee Database: A Mystery in Two Parts
 
 ![sql.png](images/sql.png)
 
@@ -125,7 +125,3 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 ## Epilogue
 
 Evidence in hand, you march into your boss's office and present the visualization. With a sly grin, your boss thanks you for your work. On your way out of the office, you hear the words, "Search your ID number." You look down at your badge to see that your employee ID number is 499942.
-
-### Copyright
-
-Trilogy Education Services © 2019. All Rights Reserved.
