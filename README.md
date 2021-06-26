@@ -6,7 +6,7 @@ Code can be run using pgAdmin4
 
 Given an employee data base of 6 csv files, schemas were created using primary, foreign, and composite keys to conduct specific searh queries about employees of the company
 
-![1](Images/1.png)
+![1](Images/1.PNG)
 
 ![Database Diagram](images/SQL_ERD.png)
 
