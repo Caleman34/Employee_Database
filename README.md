@@ -2,7 +2,7 @@
 
 Repository Size: 31.5 MB
 
-Code can be run using pgAdmin4
+Code can be run using pgAdmin4, ERD created using www.quickdatabasediagrams.com
 
 Given an employee data base of 6 csv files, schemas were created using primary, foreign, and composite keys to conduct specific searh queries about employees of the company
 
